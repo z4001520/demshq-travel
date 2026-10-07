@@ -289,16 +289,150 @@ footer a{display:block;padding:3px 0;transition:color .2s}footer a:hover{color:v
 </div></section>
 
 <section id="contact"><div class="wrap cg">
-  <div class="rv">
-    <span class="eyebrow">نحن بخدمتكم</span><h2>تواصل معنا مباشرة</h2>
-    <p style="color:#d0dce6">فريقنا متواجد لخدمتكم والإجابة على كافة استفساراتكم حول رحلات الطيران، الفيز، والبرامج السياحية على مدار الساعة.</p>
-    <div class="ci"><i class="fa-solid fa-phone"></i><div><small>خطوط الاتصال المباشر:</small><b>009647701716661 إلى 009647701716666</b></div></div>
-    <div class="ci"><i class="fa-solid fa-envelope"></i><div><small>البريد الإلكتروني الرسمي:</small><b>demshq.co@gmail.com</b></div></div>
-    <div class="soc" style="margin-top:22px"><a class="btn-wa" style="background:var(--wa)" href="https://wa.me/9647701716661" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> واتساب</a><a class="ig" href="https://www.instagram.com/demshq.travel/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> انستغرام</a><a class="fb" href="https://www.facebook.com/demshq.travel/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i> فيسبوك</a></div>
-  </div>
-  <div class="phones rv"><h3>أرقام الهواتف المتاحة للخدمة:</h3><div class="pg" id="pg"></div></div>
-</div></section>
-</main>
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شركة دمشق للسفر والسياحة</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* CSS الأساسي للصفحة */
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #25d366;
+      --dark: #1f2937;
+      --light: #f3f4f6;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+
+    /* تنسيق قسم الاتصال */
+    #contact {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .ci {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #f8fafc;
+      border-radius: 8px;
+    }
+
+    .ci i.fa-phone {
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .wa-link {
+      color: #059669;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+
+    .wa-link:hover {
+      color: #10b981;
+      text-decoration: underline;
+    }
+
+    /* شبكة أرقام الهواتف الفرعية */
+    .phone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .phone-grid a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      color: #166534;
+      text-decoration: none;
+      font-weight: 600;
+      direction: ltr;
+      transition: all 0.2s ease;
+    }
+
+    .phone-grid a:hover {
+      background-color: #25d366;
+      color: #ffffff;
+      border-color: #25d366;
+      transform: translateY(-2px);
+    }
+
+    .phone-grid a i {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- قسم الاتصال (#contact) -->
+  <section id="contact">
+    <h2>تواصل معنا</h2>
+
+    <!-- سطر الاتصال المباشر المعدل -->
+    <div class="ci">
+      <i class="fa-solid fa-phone"></i>
+      <div>
+        <small style="display: block; margin-bottom: 4px; color: #64748b;">خطوط الاتصال المباشر (اضغط للتواصل عبر الواتساب):</small>
+        <b>
+          <a href="https://wa.me/9647701716661" target="_blank" class="wa-link">009647701716661</a>
+          <span style="color: #64748b; font-weight: normal;">إلى</span> 
+          <a href="https://wa.me/9647701716666" target="_blank" class="wa-link">009647701716666</a>
+        </b>
+      </div>
+    </div>
+
+    <!-- شبكة الأرقام الفرعية -->
+    <div id="pg" class="phone-grid"></div>
+  </section>
+
+  <script>
+    // توليد الأرقام تلقائياً مع توجيه مباشر إلى WhatsApp
+    const phoneNumbers = [
+      "9647701716661",
+      "9647701716662",
+      "9647701716663",
+      "9647701716664",
+      "9647701716665",
+      "9647701716666"
+    ];
+
+    const pgContainer = document.getElementById('pg');
+    if (pgContainer) {
+      pgContainer.innerHTML = phoneNumbers.map(num => `
+        <a href="https://wa.me/${num}" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>+${num}</span>
+        </a>
+      `).join('');
+    }
+  </script>
+
+</body>
+</html>
 
 <footer><div class="wrap">
   <div class="fg4">
